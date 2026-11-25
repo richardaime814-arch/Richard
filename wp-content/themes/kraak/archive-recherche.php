@@ -75,7 +75,7 @@ $kraak_featured = get_posts( array( 'post_type' => 'recherche', 'posts_per_page'
 					the_post();
 					$kterm = kraak_term( get_post(), 'type_recherche' );
 					?>
-					<li>
+					<li data-type="<?php echo esc_attr( $kterm ? $kterm->slug : '' ); ?>">
 						<a href="<?php the_permalink(); ?>">
 							<span class="mono-label"><?php echo esc_html( kraak_code() ); ?></span>
 							<span class="research-list__title"><?php the_title(); ?></span>
